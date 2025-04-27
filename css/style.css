@@ -1,0 +1,184 @@
+/* General Styles */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap");
+
+body {
+    font-family: "Lora", serif; /* More elegant serif font */
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/mythical_background.png"); /* Use the saved image */
+    background-color: #0a0a1a; /* Darker, slightly purple-blue backup */
+    background-size: cover; /* Cover the entire background */
+    background-position: center center;
+    background-attachment: fixed; /* Keep background fixed during scroll */
+    color: #f0f0f0; /* Lighter text for contrast */
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(rgba(16, 36, 71, 0.85), rgba(10, 10, 26, 0.95)); /* Gradient background */
+    color: #fff;
+    padding: 3rem 1rem; /* Adjusted padding for responsiveness */
+    text-align: center;
+    border-bottom: 4px solid #ffd700; /* Gold accent */
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); /* Gold shadow */
+}
+
+header h1 {
+    margin: 0;
+    font-family: "Cinzel", serif; /* More decorative font for heading */
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7), 0 0 10px #ffd700; /* Enhanced text shadow */
+    letter-spacing: 2px;
+    word-wrap: break-word; /* Ensure long titles wrap */
+}
+
+main {
+    padding: 2.5rem;
+    max-width: 950px;
+    margin: 3rem auto;
+    background-color: rgba(22, 36, 71, 0.85); /* Semi-transparent dark blue */
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 215, 0, 0.3); /* Subtle gold border */
+}
+
+section {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background-color: rgba(10, 10, 26, 0.8); /* Darker semi-transparent background */
+    border-radius: 8px;
+    border-left: 6px solid #ffd700; /* Gold accent */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+    opacity: 0; /* Initial state for JS animation */
+    transform: translateY(50px) scale(0.95); /* Start lower and slightly smaller */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Slightly longer transition */
+}
+
+section h2 {
+    font-family: "Cinzel", serif;
+    color: #ffd700; /* Gold accent */
+    border-bottom: 2px solid rgba(240, 240, 240, 0.5);
+    padding-bottom: 0.7rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    word-wrap: break-word; /* Ensure long titles wrap */
+}
+
+section ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+section li {
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border-left: 3px solid rgba(255, 215, 0, 0.6);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Moved transition here */
+}
+
+section li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    transform: translateX(5px);
+}
+
+section li strong {
+    color: #ffeb99; /* Lighter gold for emphasis */
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem; /* Adjusted padding */
+    margin-top: 3rem;
+    background: linear-gradient(rgba(10, 10, 26, 0.95), rgba(16, 36, 71, 0.85));
+    color: #fff;
+    border-top: 4px solid #ffd700;
+    box-shadow: 0 -4px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Enhanced Glowing Text Effect */
+.glowing-text {
+    font-family: "Cinzel", serif;
+    font-size: 1.4rem;
+    color: #fff;
+    text-align: center;
+    animation: enhancedGlow 2s ease-in-out infinite alternate;
+    letter-spacing: 1px;
+}
+
+@keyframes enhancedGlow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ffd700, 0 0 20px #ffd700, 0 0 25px #ffd700, 0 0 30px #ffae00, 0 0 35px #ffae00;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffec80, 0 0 40px #ffec80, 0 0 50px #ffae00, 0 0 60px #ffae00, 0 0 70px #ff8c00;
+    }
+}
+
+/* Icon Styles */
+.header-icon, .section-icon {
+    height: 1.2em; /* Adjusted size */
+    vertical-align: middle;
+    margin: 0 0.3em; /* Adjusted margin */
+    filter: drop-shadow(0 0 3px #ffd700);
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-icon:hover, .section-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 992px) { /* Adjusted breakpoint */
+    main {
+        max-width: 90%; /* Use percentage for better flexibility */
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem; /* Slightly smaller */
+    }
+    main {
+        padding: 1.5rem;
+        margin: 2rem 1rem;
+    }
+    section h2 {
+        font-size: 1.8rem;
+    }
+    .header-icon, .section-icon {
+        height: 1.1em; /* Smaller icons */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        line-height: 1.6; /* Slightly reduced line-height */
+    }
+    header h1 {
+        font-size: 1.8rem; /* Further reduced */
+        letter-spacing: 1px; /* Reduced spacing */
+    }
+    section h2 {
+        font-size: 1.5rem; /* Further reduced */
+    }
+    .glowing-text {
+        font-size: 1rem; /* Smaller glowing text */
+    }
+    main {
+        padding: 1rem;
+        margin: 1.5rem 0.5rem; /* Reduced margin */
+    }
+    section {
+        padding: 1rem; /* Reduced padding */
+    }
+    .header-icon, .section-icon {
+        height: 1em; /* Even smaller icons */
+        margin: 0 0.2em;
+    }
+}
+
